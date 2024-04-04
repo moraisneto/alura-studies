@@ -1,6 +1,8 @@
+import style from './Button.module.scss'
+
 const Button = () => {
     return (
-        <button>Botão</button>
+        <button className={style.botao}>Botão</button>
     )
 }
 
