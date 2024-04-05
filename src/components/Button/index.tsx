@@ -1,8 +1,8 @@
 import style from './Button.module.scss'
 
-const Button = ({texto}: {texto: string}) => {
+const Button = ({texto, type}: {texto: string, type?: "submit" | "reset" | "button" | undefined}) => {
     return (
-        <button className={style.botao}>{texto}</button>
+        <button type={type} className={style.botao}>{texto}</button>
     )
 }
 

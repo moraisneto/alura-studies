@@ -1,13 +1,15 @@
 import Button from "../Button";
 import style from './Form.module.scss'
 import React, {useState} from "react";
+import {ITarefa} from "../../types/tarefas";
 
-const Form = () => {
+const Form = ({setTarefas}: {setTarefas:  React.Dispatch<React.SetStateAction<ITarefa[]>>}) => {
     const [tarefa, setTarefa] = useState('');
     const [tempo, setTempo] = useState('00:00');
 
     const adicionarTarefa = (evento: React.FormEvent) =>
     {
+        setTarefas(tarefasAntigas => [...tarefasAntigas, {tarefa, tempo}])
         evento.preventDefault();
     }
 
@@ -24,7 +26,7 @@ const Form = () => {
                        name="tempo" id="tempo" min="00:00:00" max="01:30:00"
                        required></input>
             </div>
-            <Button texto='Adicionar'/>
+            <Button type="submit" texto='Adicionar'/>
         </form>
     )
 }
