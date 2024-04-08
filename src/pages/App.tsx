@@ -21,7 +21,7 @@ function App() {
         <div className={style.AppStyle}>
             <Form setTarefas={setTarefas}/>
             <Listagem tarefas={tarefas} selecionaTarefa={selecionaTarefa}/>
-            <Chronometer/>
+            <Chronometer selecionado={selecionado}/>
         </div>
     );
 }
